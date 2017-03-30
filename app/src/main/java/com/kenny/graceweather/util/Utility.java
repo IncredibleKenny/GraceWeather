@@ -74,4 +74,9 @@ public class Utility {
         }
         return false;
     }
+    /**
+     * 将返回的数据解析成weather的实体类
+     * @author Kenny
+     * @time 2017/3/30 17:52
+     */
 }
