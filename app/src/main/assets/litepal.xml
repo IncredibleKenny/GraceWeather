@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <version value="1"></version>
+    <list>
+        <mapping class="com.kenny.graceweather.db.Province"></mapping>
+        <mapping class="com.kenny.graceweather.db.City"></mapping>
+        <mapping class="com.kenny.graceweather.db.County"></mapping>
+    </list>
+</litepal>
