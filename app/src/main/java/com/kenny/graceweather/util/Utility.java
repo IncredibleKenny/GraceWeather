@@ -2,9 +2,11 @@ package com.kenny.graceweather.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.kenny.graceweather.db.City;
 import com.kenny.graceweather.db.County;
 import com.kenny.graceweather.db.Province;
+import com.kenny.graceweather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,4 +81,15 @@ public class Utility {
      * @author Kenny
      * @time 2017/3/30 17:52
      */
+    public static  Weather handleWeatherResponse(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return  new Gson().fromJson(weatherContent,Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return  null;
+    }
 }
